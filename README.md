@@ -66,8 +66,12 @@ Use the prefix **dwt** to list the code snippets in **HTML** files.
 </html>
 ```
 
+## Blog
+[HTML Snippet Extension for Visual Studio Code][6]
+
 [1]:http://www.dynamsoft.com/Products/WebTWAIN_Overview.aspx
 [2]:http://www.dynamsoft.com/Products/WebTWAIN_Features.aspx
 [3]:http://www.dynamsoft.com/Downloads/WebTWAIN-Sample-Download.aspx
 [4]:http://www.dynamsoft.com/Products/WebTWAIN_News.aspx
 [5]:http://developer.dynamsoft.com/dwt/
+[6]:http://www.codepool.biz/snippet-extension-visual-studio-code.html
