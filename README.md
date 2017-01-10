@@ -38,7 +38,7 @@ Use the prefix **dwt** to list the code snippets in **HTML** files.
 <!DOCTYPE html>
 <head>
     <title>Hello World</title>
-    <script type="text/javascript" src="https://www.dynamsoft.com/Demo/DWT/Resources/dynamsoft.webtwain.min.js"> </script>
+    <script type="text/javascript" src="http://www.dynamsoft.com/library/dwt/dynamsoft.webtwain.min.js"> </script>
 </head>
 
 <body>
