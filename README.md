@@ -36,9 +36,10 @@ Use the prefix **dwt** to list the code snippets in **HTML** files.
 
 ```HTML
 <!DOCTYPE html>
+<html>
 <head>
     <title>Hello World</title>
-    <script type="text/javascript" src="http://www.dynamsoft.com/library/dwt/dynamsoft.webtwain.min.js"> </script>
+    <script type="text/javascript" src="https://www.dynamsoft.com/library/dwt/dynamsoft.webtwain.min.js"> </script>
 </head>
 
 <body>
@@ -69,9 +70,9 @@ Use the prefix **dwt** to list the code snippets in **HTML** files.
 ## Blog
 [HTML Snippet Extension for Visual Studio Code][6]
 
-[1]:http://www.dynamsoft.com/Products/WebTWAIN_Overview.aspx
-[2]:http://www.dynamsoft.com/Products/WebTWAIN_Features.aspx
-[3]:http://www.dynamsoft.com/Downloads/WebTWAIN-Sample-Download.aspx
-[4]:http://www.dynamsoft.com/Products/WebTWAIN_News.aspx
+[1]:https://www.dynamsoft.com/Products/WebTWAIN_Overview.aspx
+[2]:https://www.dynamsoft.com/Products/WebTWAIN_Features.aspx
+[3]:https://www.dynamsoft.com/Downloads/WebTWAIN-Sample-Download.aspx
+[4]:https://www.dynamsoft.com/Products/WebTWAIN_News.aspx
 [5]:http://developer.dynamsoft.com/dwt/
 [6]:http://www.codepool.biz/snippet-extension-visual-studio-code.html
