@@ -3,7 +3,7 @@
 
 ## Screenshot
 
-![document scanning on Ubuntu](http://www.codepool.biz/wp-content/uploads/2016/11/dwt-document-scanning-linux.PNG)
+![document scanning on Ubuntu](https://www.codepool.biz/wp-content/uploads/2016/11/dwt-document-scanning-linux.PNG)
 
 ## Features
 ### Support mainstream browsers on **Windows**, **Linux** and **macOS**
@@ -30,7 +30,7 @@ Your end users will have the most flexibility on browsers: **Internet Explorer**
 ## How to Use the Extension
 Use the prefix **dwt** to list the code snippets in **HTML** files.
 
-![dwt vscode extension](http://www.codepool.biz/wp-content/uploads/2016/12/dwt-vscode-extension.PNG)
+![dwt vscode extension](https://www.codepool.biz/wp-content/uploads/2016/12/dwt-vscode-extension.PNG)
 
 ## Sample Code: Hello World
 
@@ -39,7 +39,7 @@ Use the prefix **dwt** to list the code snippets in **HTML** files.
 <html>
 <head>
     <title>Hello World</title>
-    <script type="text/javascript" src="https://www.dynamsoft.com/library/dwt/dynamsoft.webtwain.min.js"> </script>
+    <script type="text/javascript" src="http://tst.dynamsoft.com/libs/dwt/14.0/dynamsoft.webtwain.min.js"> </script>
 </head>
 
 <body>
@@ -74,5 +74,5 @@ Use the prefix **dwt** to list the code snippets in **HTML** files.
 [2]:https://www.dynamsoft.com/Products/WebTWAIN_Features.aspx
 [3]:https://www.dynamsoft.com/Downloads/WebTWAIN-Sample-Download.aspx
 [4]:https://www.dynamsoft.com/Products/WebTWAIN_News.aspx
-[5]:http://developer.dynamsoft.com/dwt/
-[6]:http://www.codepool.biz/snippet-extension-visual-studio-code.html
+[5]:https://developer.dynamsoft.com/dwt/
+[6]:https://www.codepool.biz/snippet-extension-visual-studio-code.html
