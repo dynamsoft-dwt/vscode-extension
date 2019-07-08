@@ -28,7 +28,7 @@ Your end users will have the most flexibility on browsers: **Internet Explorer**
 * [Developer Center][5]
 
 ## How to Use the Extension
-Use the prefix **dwt** to list the code snippets in **HTML** files.
+Use the prefix **dwt** to list the code snippets in **HTML** files. Check the Blog for more info (link at the bottom).
 
 ![dwt vscode extension](https://www.codepool.biz/wp-content/uploads/2016/12/dwt-vscode-extension.PNG)
 

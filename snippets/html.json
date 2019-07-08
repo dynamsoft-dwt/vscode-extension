@@ -2,7 +2,7 @@
     "include": {
         "prefix": "dwt include",
         "body": [
-            "<script type=\"text/javascript\" src=\"http://tst.dynamsoft.com/libs/dwt/14.0/dynamsoft.webtwain.min.js\"> </script>"
+            "<script type=\"text/javascript\" src=\"http://tst.dynamsoft.com/libs/dwt/15.0/dynamsoft.webtwain.min.js\"> </script>"
         ],
         "description": "Include Dynamic Web TWAIN JavaScript library."
     },
@@ -33,7 +33,7 @@
         "prefix": "dwt full sample",
         "body": [
             "<!DOCTYPE html>\n<html>\n<head>\n\t<title>Hello World</title>",
-            "\t<script type=\"text/javascript\" src=\"http://tst.dynamsoft.com/libs/dwt/14.0/dynamsoft.webtwain.min.js\"> </script>\n</head>\n\n<body>",
+            "\t<script type=\"text/javascript\" src=\"http://tst.dynamsoft.com/libs/dwt/15.0/dynamsoft.webtwain.min.js\"> </script>\n</head>\n\n<body>",
             "\t<input type=\"button\" value=\"Scan\" onclick=\"AcquireImage();\" />",
             "\t<div id=\"dwtcontrolContainer\"></div>\n",
             "\t<script type=\"text/javascript\">",
