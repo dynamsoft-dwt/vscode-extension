@@ -39,7 +39,7 @@ Use the prefix **dwt** to list the code snippets in **HTML** files. Check the Bl
 <html>
 <head>
     <title>Hello World</title>
-    <script type="text/javascript" src="http://tst.dynamsoft.com/libs/dwt/14.0/dynamsoft.webtwain.min.js"> </script>
+    <script type="text/javascript" src="http://tst.dynamsoft.com/libs/dwt/15.0/dynamsoft.webtwain.min.js"> </script>
 </head>
 
 <body>
@@ -47,6 +47,9 @@ Use the prefix **dwt** to list the code snippets in **HTML** files. Check the Bl
     <div id="dwtcontrolContainer"></div>
 
     <script type="text/javascript">
+    window.onload = function () {
+        Dynamsoft.WebTwainEnv.Load();
+    };
     function AcquireImage() {
         var DWObject = Dynamsoft.WebTwainEnv.GetWebTwain('dwtcontrolContainer');
         DWObject.IfDisableSourceAfterAcquire = true;
@@ -55,11 +58,10 @@ Use the prefix **dwt** to list the code snippets in **HTML** files. Check the Bl
         if(bSelected) {
             var OnAcquireImageSuccess, OnAcquireImageFailure;
             OnAcquireImageSuccess = OnAcquireImageFailure = function () {
-            DWObject.CloseSource();
-        };
-
-        DWObject.OpenSource();
-        DWObject.AcquireImage(OnAcquireImageSuccess, OnAcquireImageFailure);  
+                DWObject.CloseSource();
+            };
+            DWObject.OpenSource();
+            DWObject.AcquireImage(OnAcquireImageSuccess, OnAcquireImageFailure);
         }
     }
     </script>
