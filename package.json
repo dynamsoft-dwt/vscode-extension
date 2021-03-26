@@ -1,36 +1,70 @@
 {
-    "name": "dwt",
-    "displayName": "Dynamic Web TWAIN",
-    "description": "Dynamic Web TWAIN is a browser-based document scanning SDK specifically designed for web applications. With just a few lines of JavaScript code, you can develop robust applications to scan documents.",
-    "version": "15.0.2",
-    "publisher": "Dynamsoft",
-    "icon": "images/dwt.jpg",
-    "categories": [
-        "Snippets"
-    ],
-    "galleryBanner": {
-        "color": "#f5f3f4",
-        "theme": "light"
-    },
-    "homepage": "https://www.dynamsoft.com/Products/WebTWAIN_Overview.aspx",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Dynamsoft/Dynamic-Web-TWAIN.git"
-    },
-    "engines": {
-        "vscode": "^1.5.0"
-    },
-    "keywords": [
-        "JavaScript TWAIN",
-        "JavaScript scan",
-        "Document scanning",
-        "Document management",
-        "Web TWAIN"
-    ],
-    "contributes": {
-        "snippets": [{
-            "language": "html",
-            "path": "./snippets/html.json"
-        }]
-    }
+	"name": "dwt",
+	"displayName": "Dynamic Web TWAIN",
+	"description": "Dynamic Web TWAIN is a browser-based document scanning SDK specifically designed for web applications. With just a few lines of JavaScript code, you can develop robust applications to scan documents.",
+	"version": "16.2.0",
+	"publisher": "Dynamsoft",
+	"icon": "images/dwt.jpg",
+	"categories": [
+		"Snippets"
+	],
+	"galleryBanner": {
+		"color": "#f5f3f4",
+		"theme": "light"
+	},
+	"homepage": "https://www.dynamsoft.com/web-twain/overview/",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Dynamsoft/Dynamic-Web-TWAIN"
+	},
+	"engines": {
+		"vscode": "^1.54.0"
+	},
+	"keywords": [
+		"JavaScript TWAIN",
+		"JavaScript scan",
+		"Document scanning",
+		"Document management",
+		"Web TWAIN"
+	],
+	"main": "./out/extension.js",
+	"activationEvents": [
+		"onCommand:dwt.create"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "dwt.create",
+				"title": "Quick Start",
+				"category": "dwt"
+			}
+		],
+		"snippets": [
+			{
+				"language": "html",
+				"path": "./snippets/html.json"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.54.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.11.7",
+		"eslint": "^7.19.0",
+		"@typescript-eslint/eslint-plugin": "^4.14.1",
+		"@typescript-eslint/parser": "^4.14.1",
+		"glob": "^7.1.6",
+		"mocha": "^8.2.1",
+		"typescript": "^4.1.3",
+		"vscode-test": "^1.5.0"
+	}
 }

@@ -1,80 +1,79 @@
 # Dynamic Web TWAIN: Cross-platform JavaScript Document Scanning SDK
-[Dynamic Web TWAIN][1] is a browser-based document scanning SDK specifically designed for web applications. With just a few lines of JavaScript code, you can develop robust applications to scan documents from TWAIN and SANE compatible scanners, edit the scanned images and save them to a local/server file system or document repository.
+[Dynamic Web TWAIN](https://www.dynamsoft.com/web-twain/overview/) is a browser-based document scanning SDK specifically designed for web applications. With just a few lines of JavaScript code, you can develop robust applications to scan documents from TWAIN and SANE compatible scanners, edit the scanned images and save them to a local/server file system or document repository.
 
-## Screenshot
+## Online Demo
+Try it [here](https://demo.dynamsoft.com/web-twain/).
 
 ![document scanning on Ubuntu](https://www.codepool.biz/wp-content/uploads/2016/11/dwt-document-scanning-linux.PNG)
 
 ## Features
-### Support mainstream browsers on **Windows**, **Linux** and **macOS**
-Your end users will have the most flexibility on browsers: **Internet Explorer** version 6 and above, **Edge**, **Firefox**, **Chrome**, and **Safari**. Users can scan from **Windows**, **Linux** and **macOS** machines.
+- Support **Windows**, **Linux**, **macOS**, **Raspberry Pi**, and **Jetson Nano**
+- Easy integration and end-user distribution
+- Empower your web applications with imaging **add-ons**
+    * Barcode Reader: Read linear barcodes, QRcode, PDF417, and DataMatrix
+    * Webcam Capture: Capture images from USB webcams
+    * PDF Rasterizer: Covert text PDF files to images
+    * OCR Professional: Extract text (Western and Arabic) from images
 
-### Easy integration and end-user distribution
-* JavaScript TWAIN and SANE scanner APIs.
-* Supports cookie & session integration for HTTP image uploading.
-* MSI installer available for IT managers to easily do batch installations to their entire network.
-
-### Empower your web applications with imaging **add-ons**
-* Barcode Reader: Read linear barcodes, QRcode, PDF417 and DataMatrix
-* Webcam Capture: Capture images from DirectShow compatible webcams
-* PDF Rasterizer: Covert text PDF files to images
-* OCR Professional: Extract text (Western and Arabic) from images
-
-[More][2]
-
-## Resources
-* [Sample Code][3]
-* [Release Notes][4]
-* [Developer Center][5]
+## API Documentation
+https://www.dynamsoft.com/web-twain/docs/about/index.html
 
 ## How to Use the Extension
-Use the prefix **dwt** to list the code snippets in **HTML** files. Check the Blog for more info (link at the bottom).
+- Press **F1** and type in **dwt** to quickly create a "Hello World" program.
+- Use the prefix **dwt** to show code snippets in **HTML** files.
 
 ![dwt vscode extension](https://www.codepool.biz/wp-content/uploads/2016/12/dwt-vscode-extension.PNG)
 
-## Sample Code: Hello World
+## Quick Start
 
 ```HTML
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Hello World</title>
-    <script type="text/javascript" src="http://tst.dynamsoft.com/libs/dwt/15.0/dynamsoft.webtwain.min.js"> </script>
+    <script type="text/javascript" src="https://unpkg.com/dwt/dist/dynamsoft.webtwain.min.js"></script>
 </head>
 
 <body>
-    <input type="button" value="Scan" onclick="AcquireImage();" />
     <div id="dwtcontrolContainer"></div>
-
+    <input type="button" value="Acquire" onclick="AcquireImage();" />
     <script type="text/javascript">
-    window.onload = function () {
-        Dynamsoft.WebTwainEnv.Load();
-    };
-    function AcquireImage() {
-        var DWObject = Dynamsoft.WebTwainEnv.GetWebTwain('dwtcontrolContainer');
-        DWObject.IfDisableSourceAfterAcquire = true;
-        var bSelected = DWObject.SelectSource(); 
-
-        if(bSelected) {
-            var OnAcquireImageSuccess, OnAcquireImageFailure;
-            OnAcquireImageSuccess = OnAcquireImageFailure = function () {
-                DWObject.CloseSource();
-            };
-            DWObject.OpenSource();
-            DWObject.AcquireImage(OnAcquireImageSuccess, OnAcquireImageFailure);
+		window.onload = function(){
+			Dynamsoft.WebTwainEnv.Containers = [{ContainerId:'dwtcontrolContainer', Width:270, Height:350}];
+			Dynamsoft.WebTwainEnv.ResourcesPath = "https://unpkg.com/dwt/dist/";
+			Dynamsoft.WebTwainEnv.ProductKey = 'PRODUCT-KEYS';
+			Dynamsoft.WebTwainEnv.Load();
+		}
+        function AcquireImage() {
+			var DWObject = Dynamsoft.WebTwainEnv.GetWebTwain('dwtcontrolContainer');
+            if (DWObject) {
+                if(DWObject.UseLocalService) {
+					DWObject.SelectSource(function () {
+							var OnAcquireImageSuccess, OnAcquireImageFailure;
+							OnAcquireImageSuccess = OnAcquireImageFailure = function () {
+								DWObject.CloseSource();
+							};
+							DWObject.OpenSource();
+							DWObject.IfDisableSourceAfterAcquire = true;
+							DWObject.AcquireImage(OnAcquireImageSuccess, OnAcquireImageFailure);
+						}, function () {
+							console.log('SelectSource failed!');
+						});
+				} else {
+					DWObject.LoadImageEx("", -1);
+				}
+            }
         }
-    }
     </script>
 </body>
+
 </html>
 ```
 
-## Blog
-[HTML Snippet Extension for Visual Studio Code][6]
+## License Key
+Please visit https://www.dynamsoft.com/customer/license/trialLicense to get a valid license and update `LICENSE-KEY`:
 
-[1]:https://www.dynamsoft.com/Products/WebTWAIN_Overview.aspx
-[2]:https://www.dynamsoft.com/Products/WebTWAIN_Features.aspx
-[3]:https://www.dynamsoft.com/Downloads/WebTWAIN-Sample-Download.aspx
-[4]:https://www.dynamsoft.com/Products/WebTWAIN_News.aspx
-[5]:https://developer.dynamsoft.com/dwt/
-[6]:https://www.codepool.biz/snippet-extension-visual-studio-code.html
+```js
+Dynamsoft.WebTwainEnv.ProductKey = 'LICENSE-KEY';
+```
